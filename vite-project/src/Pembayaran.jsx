@@ -35,8 +35,8 @@ export default function Pembayaran({ keranjang, pindahHalaman, aturKeranjang, at
         </div>
         <div className="kolom-1 kotak-ringkasan">
           <h3>Ringkasan Pesanan</h3>
-          <div className="baris-ringkasan jarak-atas-sedikit"><span>Subtotal:</span> <b>${subtotal.toFixed(2)}</b></div>
-          <div className="baris-ringkasan"><span>Pajak (10%):</span> <b>${pajak.toFixed(2)}</b></div>
+          <div className="baris-ringkasan jarak-atas-sedikit"><span>Subtotal:</span> <b>Rp {subtotal.toFixed(2)}</b></div>
+          <div className="baris-ringkasan"><span>Pajak (10%):</span> <b>Rp {pajak.toFixed(2)}</b></div>
           <hr className="garis-pembatas"/>
           <div className="total-ringkasan"><span>Total:</span> <b className="harga-total-ringkasan">${totalAkhir.toFixed(2)}</b></div>
           <button className="tombol-utama" onClick={tanganiPembayaran}>Bayar Sekarang</button>
