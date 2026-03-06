@@ -1,4 +1,3 @@
-/* 1. RESET & DASAR */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -23,7 +22,6 @@ body {
   text-align: left !important;
 }
 
-/* 2. TATA LETAK UTAMA */
 .wadah {
   max-width: 1200px;
   width: 100%;
@@ -64,7 +62,6 @@ body {
   border: 1px solid #eee;
 }
 
-/* 3. NAVIGASI (NAVBAR) */
 .navigasi {
   display: flex;
   justify-content: space-between;
@@ -116,7 +113,6 @@ body {
   font-size: 14px;
 }
 
-/* 4. AUTENTIKASI (LOGIN & DAFTAR) */
 .wadah-autentikasi {
   display: flex;
   justify-content: center;
@@ -153,7 +149,6 @@ body {
   margin-bottom: 8px;
 }
 
-/* PERBAIKAN WARNA INPUT DI SINI */
 .grup-formulir input {
   width: 100%;
   padding: 12px 15px;
@@ -179,7 +174,6 @@ body {
   color: #34536A;
 }
 
-/* 5. TOMBOL UMUM */
 .tombol-utama {
   width: 100%;
   background: #34536A;
@@ -261,7 +255,6 @@ body {
   width: 100px;
 }
 
-/* 6. BERANDA & PRODUK */
 .spanduk-beranda {
   background: linear-gradient(135deg, #4A728E, #3A5F79);
   color: white;
@@ -329,7 +322,6 @@ body {
   padding-top: 20px;
 }
 
-/* 7. DETAIL PRODUK */
 .kotak-gambar-detail {
   background: #DFEFFB;
   border-radius: 12px;
@@ -352,7 +344,6 @@ body {
   color: #2A3F54;
 }
 
-/* 8. KERANJANG BELANJA */
 .keranjang-kosong {
   text-align: center;
   padding: 50px;
@@ -464,7 +455,6 @@ body {
   color: #34536A;
 }
 
-/* 9. PEMBAYARAN & SUKSES */
 .jarak-atas-sedikit {
   margin-top: 15px;
 }
@@ -479,7 +469,6 @@ body {
   font-size: 60px;
 }
 
-/* 10. PROFIL & RIWAYAT PESANAN */
 .ikon-profil {
   font-size: 60px;
   text-align: center;
@@ -576,7 +565,6 @@ body {
   color: #666;
 }
 
-/* 11. UTILITAS (GARIS PEMISAH) */
 .garis-pembatas {
   border: none;
   border-top: 1px solid #ccc;
