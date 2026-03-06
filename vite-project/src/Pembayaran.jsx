@@ -5,9 +5,7 @@ export default function Pembayaran({ keranjang, pindahHalaman, aturKeranjang, at
   const pajak = subtotal * 0.1;
   const totalAkhir = subtotal + pajak;
 
-  const tanganiPembayaran = (e) => {
-    e.preventDefault(); 
-    
+  const tanganiPembayaran = () => {
     const pesananBaru = {
       id: "ORD-" + Math.floor(Math.random() * 100000),
       tanggal: new Date().toLocaleDateString('id-ID'),
@@ -23,19 +21,13 @@ export default function Pembayaran({ keranjang, pindahHalaman, aturKeranjang, at
   return (
     <div className="wadah">
       <h2>Pembayaran</h2>
-      <form className="tata-letak-baris" onSubmit={tanganiPembayaran}>
-        
+      <div className="tata-letak-baris">
         <div className="kolom-2 kotak-ringkasan">
           <h3>Informasi Pengiriman</h3>
           
           <div className="grup-formulir jarak-atas-sedikit">
             <label>NAMA LENGKAP</label>
-            <input type="text" defaultValue={`${pengguna.namaDepan} ${pengguna.namaBelakang}`.trim()} required />
-          </div>
-          
-          <div className="grup-formulir">
-            <label>NOMOR TELEPON</label>
-            <input type="tel" defaultValue={pengguna.telepon} required />
+            <input type="text" defaultValue={`${pengguna.namaDepan} ${pengguna.namaBelakang}`} />
           </div>
           
           <div className="grup-formulir">
@@ -49,12 +41,11 @@ export default function Pembayaran({ keranjang, pindahHalaman, aturKeranjang, at
           <div className="baris-ringkasan jarak-atas-sedikit"><span>Subtotal:</span> <b>Rp {subtotal.toFixed(2)}</b></div>
           <div className="baris-ringkasan"><span>Pajak (10%):</span> <b>Rp {pajak.toFixed(2)}</b></div>
           <hr className="garis-pembatas"/>
-          <div className="total-ringkasan"><span>Total:</span> <b className="harga-total-ringkasan">Rp {totalAkhir.toFixed(2)}</b></div>
-          
-          <button type="submit" className="tombol-utama">Bayar Sekarang</button>
+          <div className="total-ringkasan"><span>Total:</span> <b className="harga-total-ringkasan">${totalAkhir.toFixed(2)}</b></div>
+          <button className="tombol-utama" onClick={tanganiPembayaran}>Bayar Sekarang</button>
         </div>
         
-      </form>
+      </div>
     </div>
   );
 }
