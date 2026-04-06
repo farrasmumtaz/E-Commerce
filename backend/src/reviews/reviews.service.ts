@@ -4,7 +4,6 @@ import { Injectable } from '@nestjs/common';
 export class ReviewsService {
   private reviews: any[] = [];
 
-  // 🔥 TAMBAH REVIEW
   create(userId: number, data: any) {
     const review = {
       id: this.reviews.length + 1,
@@ -19,7 +18,6 @@ export class ReviewsService {
     return review;
   }
 
-  // 🔥 GET REVIEW BY PRODUCT
   findByProduct(productId: number) {
     return this.reviews.filter((r) => r.productId === productId);
   }

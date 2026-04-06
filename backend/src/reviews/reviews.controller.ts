@@ -15,14 +15,12 @@ export class ReviewsController {
     return this.jwtService.decode(token) as any;
   }
 
-  // 🔥 CREATE REVIEW
   @Post()
   create(@Body() body: any, @Headers('authorization') auth: string) {
     const user = this.getUserFromToken(auth);
     return this.reviewsService.create(user.userId, body);
   }
 
-  // 🔥 GET REVIEW PER PRODUK
   @Get(':productId')
   getByProduct(@Param('productId') productId: string) {
     return this.reviewsService.findByProduct(Number(productId));

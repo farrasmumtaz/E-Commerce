@@ -18,7 +18,6 @@ export class OrdersController {
     private jwtService: JwtService,
   ) {}
 
-  // 🔐 AMBIL USER DARI TOKEN (FIXED)
   getUserFromToken(auth: string) {
     if (!auth) {
       throw new Error('Token tidak ada');
@@ -33,22 +32,18 @@ export class OrdersController {
 
     return decoded;
   }
-
-  // 🔥 CREATE ORDER
   @Post()
   create(@Body() body: any, @Headers('authorization') auth: string) {
     const user = this.getUserFromToken(auth);
     return this.ordersService.createOrder(user.userId, body);
   }
 
-  // 🔥 GET ORDER USER (FIXED)
   @Get()
   getAll(@Headers('authorization') auth: string) {
     const user = this.getUserFromToken(auth);
     return this.ordersService.getOrders(user.userId);
   }
 
-  // 🔥 ONGKIR API
   @Get('ongkir')
   getOngkir(@Query('kota') kota: string, @Query('kurir') kurir: string) {
     return {
@@ -56,7 +51,6 @@ export class OrdersController {
     };
   }
 
-  // 🔥 TRACKING
   @Patch(':id/status')
   updateStatus(@Param('id') id: string) {
     return this.ordersService.updateStatus(id);

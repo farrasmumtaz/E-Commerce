@@ -5,7 +5,6 @@ export default function AdminPanel({ pindahHalaman }) {
   const [harga, setHarga] = useState("");
   const [products, setProducts] = useState([]);
 
-  // 🔥 LOAD PRODUK SAAT MASUK ADMIN
   useEffect(() => {
     fetch("http://localhost:3000/products")
       .then((res) => res.json())
@@ -13,7 +12,6 @@ export default function AdminPanel({ pindahHalaman }) {
       .catch((err) => console.error(err));
   }, []);
 
-  // 🔥 TAMBAH PRODUK
   const tambahProduk = async () => {
     try {
       const token = localStorage.getItem("token");
@@ -35,7 +33,6 @@ export default function AdminPanel({ pindahHalaman }) {
 
       console.log("Produk baru:", data);
 
-      // 🔥 update UI langsung
       setProducts([...products, data]);
 
       setNamaProduk("");
@@ -47,7 +44,6 @@ export default function AdminPanel({ pindahHalaman }) {
     }
   };
 
-  // 🔥 DELETE PRODUK
   const hapusProduk = async (id) => {
     try {
       const response = await fetch(
@@ -61,7 +57,6 @@ export default function AdminPanel({ pindahHalaman }) {
 
       console.log("Produk dihapus:", id);
 
-      // 🔥 update UI (hapus dari state)
       setProducts(products.filter((p) => p.id !== id));
 
     } catch (err) {
@@ -73,7 +68,7 @@ export default function AdminPanel({ pindahHalaman }) {
     <div className="wadah">
       <h2>Admin Panel</h2>
 
-      {/* 🔥 FORM TAMBAH */}
+      {}
       <div className="kotak-ringkasan">
         <h3>Tambah Produk</h3>
 
@@ -96,7 +91,7 @@ export default function AdminPanel({ pindahHalaman }) {
         </button>
       </div>
 
-      {/* 🔥 LIST PRODUK */}
+      {}
       <div className="kotak-ringkasan">
         <h3>Daftar Produk</h3>
 

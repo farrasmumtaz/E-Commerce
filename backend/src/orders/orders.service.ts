@@ -4,7 +4,6 @@ import { Injectable } from '@nestjs/common';
 export class OrdersService {
   private orders: any[] = [];
 
-  // 🔥 HITUNG ONGKIR
   hitungOngkir(kota: string, kurir: string): number {
     const base = 10000;
 
@@ -25,7 +24,6 @@ export class OrdersService {
     );
   }
 
-  // 🔥 CREATE ORDER
   createOrder(userId: number, data: any) {
     const ongkir = this.hitungOngkir(data.kota, data.kurir);
 

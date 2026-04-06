@@ -7,12 +7,10 @@ export default function DetailProduk({
 }) {
   const [produk, setProduk] = useState(null);
 
-  // 🔥 REVIEW STATE (HARUS DI DALAM COMPONENT)
   const [reviews, setReviews] = useState([]);
   const [komentar, setKomentar] = useState("");
   const [rating, setRating] = useState(5);
 
-  // 🔥 GET DETAIL PRODUK
   useEffect(() => {
     fetch(`http://localhost:3000/products/${produkId}`)
       .then((res) => res.json())
@@ -20,7 +18,6 @@ export default function DetailProduk({
       .catch((err) => console.error(err));
   }, [produkId]);
 
-  // 🔥 GET REVIEW PRODUK
   useEffect(() => {
     fetch(`http://localhost:3000/reviews/${produkId}`)
       .then((res) => res.json())
@@ -28,7 +25,6 @@ export default function DetailProduk({
       .catch((err) => console.error(err));
   }, [produkId]);
 
-  // 🔥 KIRIM REVIEW
   const kirimReview = async () => {
     if (!komentar) {
       alert("Komentar tidak boleh kosong!");
@@ -53,7 +49,6 @@ export default function DetailProduk({
 
       const data = await response.json();
 
-      // 🔥 update langsung tanpa reload
       setReviews((prev) => [data, ...prev]);
       setKomentar("");
       setRating(5);
@@ -74,12 +69,12 @@ export default function DetailProduk({
       </button>
 
       <div className="detail-container">
-        {/* GAMBAR */}
+        {}
         <div className="detail-gambar">
           <img src={produk.img || "/assets/default.png"} alt={produk.nama} />
         </div>
 
-        {/* INFO */}
+        {}
         <div className="detail-info">
           <h2>{produk.nama}</h2>
           <p className="kategori">{produk.kategori}</p>
@@ -95,11 +90,11 @@ export default function DetailProduk({
         </div>
       </div>
 
-      {/* 🔥 REVIEW SECTION */}
+      {}
       <div className="review-container">
         <h3>⭐ Review Produk</h3>
 
-        {/* FORM REVIEW */}
+        {}
         <div className="review-form">
           <select
             value={rating}
@@ -123,7 +118,7 @@ export default function DetailProduk({
           </button>
         </div>
 
-        {/* LIST REVIEW */}
+        {}
         <div className="review-list">
           {reviews.length === 0 && <p>Belum ada review</p>}
 

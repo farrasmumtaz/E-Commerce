@@ -44,7 +44,6 @@ export class CartService {
     return this.carts[userId];
   }
 
-  // 🔥 CLEAR CART PER USER
   clearCart(userId: number) {
     this.carts[userId] = [];
     return [];

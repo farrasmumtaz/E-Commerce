@@ -10,9 +10,9 @@ export default function Navbar({ pindahHalaman, jumlahKeranjang, pengguna }) {
 
         {pengguna.email ? (
           <>
-            {/* ✅ Tambah tombol profil */}
+            {}
             <button onClick={() => pindahHalaman("profil")}>
-              👤 {pengguna.email}
+              {pengguna.email}
             </button>
 
             {pengguna.role === "admin" && (

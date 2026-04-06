@@ -40,7 +40,6 @@ export default function Pembayaran({
     try {
       const token = localStorage.getItem("token");
 
-      // 🔥 CREATE ORDER
       const response = await fetch("http://localhost:3000/orders", {
         method: "POST",
         headers: {
@@ -59,7 +58,6 @@ export default function Pembayaran({
       const data = await response.json();
       console.log("Order berhasil:", data);
 
-      // 🔥 CLEAR CART
       await fetch("http://localhost:3000/cart", {
         method: "DELETE",
         headers: {
@@ -81,7 +79,7 @@ export default function Pembayaran({
 
       <form onSubmit={tanganiPembayaran} className="tata-letak-baris">
 
-        {/* FORM KIRI */}
+        {}
         <div className="kolom-2 kotak-ringkasan">
           <h3>Informasi Pengiriman</h3>
 
@@ -126,7 +124,7 @@ export default function Pembayaran({
           </div>
         </div>
 
-        {/* RINGKASAN */}
+        {}
         <div className="kolom-1 kotak-ringkasan">
           <h3>Ringkasan</h3>
 

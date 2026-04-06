@@ -3,7 +3,6 @@ import { ProductsService } from './products.service';
 import { JwtService } from '@nestjs/jwt';
 import { Headers, Param } from '@nestjs/common';
 
-// ✅ Tambah interface ini
 interface JwtPayload {
   userId: number;
   role: string;
@@ -17,11 +16,10 @@ export class ProductsController {
     private jwtService: JwtService,
   ) {}
 
-  // ✅ Ubah return type jadi JwtPayload
   getUser(auth: string): JwtPayload {
     if (!auth) throw new Error('Token tidak ada');
     const token = auth.replace('Bearer ', '');
-    return this.jwtService.decode(token) as JwtPayload; // ✅ cast ke JwtPayload
+    return this.jwtService.decode(token) as JwtPayload;
   }
 
   @Get()

@@ -7,7 +7,6 @@ export default function SellerPanel({ pindahHalaman }) {
 
   const token = localStorage.getItem("token");
 
-  // 🔥 LOAD PRODUK MILIK SELLER
   useEffect(() => {
     fetch("http://localhost:3000/products/my", {
       headers: {
@@ -19,7 +18,6 @@ export default function SellerPanel({ pindahHalaman }) {
       .catch((err) => console.error(err));
   }, []);
 
-  // 🔥 TAMBAH PRODUK
   const tambahProduk = async () => {
     try {
       const response = await fetch("http://localhost:3000/products", {
@@ -66,7 +64,7 @@ export default function SellerPanel({ pindahHalaman }) {
     <div className="wadah">
       <h2>🛒 Seller Panel</h2>
 
-      {/* 🔥 FORM TAMBAH */}
+      {}
       <div className="kotak-ringkasan">
         <h3>Tambah Produk</h3>
 
@@ -89,7 +87,7 @@ export default function SellerPanel({ pindahHalaman }) {
         </button>
       </div>
 
-      {/* 🔥 LIST PRODUK */}
+      {}
       <div className="kotak-ringkasan">
         <h3>Produk Saya</h3>
 
