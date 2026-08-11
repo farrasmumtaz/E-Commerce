@@ -11,25 +11,22 @@ export class UsersService {
     },
   ];
 
-  // 🔥 REGISTER USER
   createUser(data: any) {
     const user = {
       id: this.users.length + 1,
       email: data.email,
       password: data.password,
-      role: data.role || 'user', // default user
+      role: data.role || 'user',
     };
 
     this.users.push(user);
     return user;
   }
 
-  // 🔥 CARI USER
   findByEmail(email: string) {
     return this.users.find((user) => user.email === email);
   }
 
-  // 🔥 (OPSIONAL) GET ALL USERS
   findAll() {
     return this.users;
   }

@@ -44,12 +44,10 @@ export class OrdersService {
     return order;
   }
 
-  // 🔥 GET ORDER PER USER
   getOrders(userId: number) {
     return this.orders.filter((o) => o.userId === userId);
   }
 
-  // 🔥 TRACKING STATUS
   updateStatus(id: string) {
     const order = this.orders.find((o) => o.id === id);
 

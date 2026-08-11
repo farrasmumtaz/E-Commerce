@@ -9,13 +9,11 @@ export class UsersController {
     private jwtService: JwtService,
   ) {}
 
-  // 🔥 REGISTER
   @Post('register')
   register(@Body() body: any) {
     return this.usersService.createUser(body);
   }
 
-  // 🔥 LOGIN
   @Post('login')
   login(@Body() body: any) {
     const user = this.usersService.findByEmail(body.email);
@@ -24,7 +22,6 @@ export class UsersController {
       return { message: 'Login gagal' };
     }
 
-    // 🔥 TOKEN BERISI ROLE (PENTING!)
     const token = this.jwtService.sign({
       userId: user.id,
       email: user.email,
